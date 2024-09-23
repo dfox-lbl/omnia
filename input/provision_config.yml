@@ -24,7 +24,7 @@
 # Value of iso_file_path should contain cluster_os_type and cluster_os_version values from software_config.json
 # When cluster_os_type is ubuntu and cluster_os_version is 22.04, by default omnia configures generic kernel.
 # To customize kernel flavor in ubuntu 22.04, define ubuntu_kernel_flavor as 'hwe' or 'generic'
-iso_file_path: ""
+iso_file_path: "/var/spool/omnia/rocky/Rocky-8.8-x86_64-dvd1.iso"
 
 #### Mandatory
 # Nodes present in mapping file, won't be considered for this node_name.
@@ -32,7 +32,7 @@ iso_file_path: ""
 # Hostname = node_name + '0000x' + domain_name
 # Hostname <= 65 characters.
 # Example: servernode00001.Omnia.test , where node_name=servernode, domain_name=Omnia.test , 00001 used by Omnia
-node_name: "node"
+node_name: "nid"
 
 #### Mandatory
 # Domain name the user intends to configure on the cluster.
@@ -41,7 +41,7 @@ node_name: "node"
 # Hostname <= 65 characters.
 # Example: servernode00001.Omnia.test ,where node_name=servernode ,domain_name=Omnia.test ,00001 used by Omnia
 # Examples: abcd.test, ipa.test
-domain_name: ""
+domain_name: "ddomnia.csg.nersc.gov"
 
 #### Optional
 # This depicts the path where user has kept the PXE mapping file.
@@ -49,7 +49,7 @@ domain_name: ""
 # Ensure that admin IPs given in mapping file are within the admin_static_ranges.
 # A templates for mapping file exists in omnia/examples, namely, pxe_mapping_file.csv
 # Format of csv: SERVICE_TAG,ADMIN_MAC,HOSTNAME,ADMIN_IP,BMC_IP
-pxe_mapping_file_path: ""
+pxe_mapping_file_path: "pxe_mapping.csv" 
 
 #### Mandatory
 # Variable indicates whether switch based discovery should be enabled to discover the nodes
@@ -92,7 +92,7 @@ disk_partition:
 # Available timezones are provided in provision/roles/provision_validation/files/timezone.txt
 # Default: "GMT"
 # Few accepted values: EST,CET,MST,CST6CDT,PST8PDT
-timezone: "GMT"
+timezone: "PST8PDT"
 
 #### Mandatory
 # Language that needs to be set during OS provisioning.
